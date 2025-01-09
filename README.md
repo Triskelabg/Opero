@@ -3,7 +3,7 @@ Prérequis :
 Node.js installé sur votre machine.
 Étapes :
 Clonez le projet :
-git clone https://github.com/triskel/opero.git
+git clone  https://github.com/Triskelabg/Opero.git
 
 Installez les dépendances :
 ```bash

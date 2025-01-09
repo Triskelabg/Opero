@@ -1,9 +1,10 @@
 interface BanierSiteProps {
   image: string;
   title: string;
+  isSeformerPage ?: boolean
 }
 
-export default function BanierSite({ image, title }: BanierSiteProps) {
+export default function BanierSite({ image, title, isSeformerPage }: BanierSiteProps) {
   return (
     <div className="flex relative h-[597px] justify-center items-center">
       {/* Image de fond */}
@@ -56,34 +57,39 @@ export default function BanierSite({ image, title }: BanierSiteProps) {
             <p className="text-white text-center font-almarai text-[26px] font-light leading-[36px] tracking-[0.52px]">
               {title}
             </p>
-            <div className="flex items-center space-x-4">
-              {/* Texte */}
-              <p className="text-white font-almarai text-[16px] font-light leading-[22px] tracking-[0.32px]">
-                Je suis
-              </p>
 
-              {/* Liste déroulante */}
-              <div className="relative">
-                <select
-                  className=" w-[200px] appearance-none bg-transparent border border-[rgba(255,255,255,.6)] text-white font-almarai text-[16px] font-light leading-[22px] tracking-[0.32px] rounded-[8px] px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#64E7D2] focus:border-transparent"
-                >
-                  <option>Profession</option>
-                  <option>Médecin</option>
-                  <option>Pharmacien</option>
-                  <option>Infirmier</option>
-                  <option>Autre</option>
-                </select>
-                {/* Icône de la flèche */}
-                <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+            {isSeformerPage && (
 
+              <div className="flex items-center space-x-4">
+                {/* Texte */}
+                <p className="text-white font-almarai text-[16px] font-light leading-[22px] tracking-[0.32px]">
+                  Je suis
+                </p>
+
+                {/* Liste déroulante */}
+                <div className="relative">
+                  <select
+                    className=" w-[200px] appearance-none bg-transparent border border-[rgba(255,255,255,.6)] text-white font-almarai text-[16px] font-light leading-[22px] tracking-[0.32px] rounded-[8px] px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#64E7D2] focus:border-transparent"
+                  >
+                    <option>Profession</option>
+                    <option>Médecin</option>
+                    <option>Pharmacien</option>
+                    <option>Infirmier</option>
+                    <option>Autre</option>
+                  </select>
+                  {/* Icône de la flèche */}
+                  <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+
+                  </div>
                 </div>
+
+                {/* Bouton */}
+                <button className="bg-[#64E7D2] text-[#06102E] font-almarai text-[16px] font-normal leading-[36px] tracking-[1.28px] px-6 py-1 rounded-[8px] hover:bg-[#52cdb9]">
+                  Je m'inscris
+                </button>
               </div>
 
-              {/* Bouton */}
-              <button className="bg-[#64E7D2] text-[#06102E] font-almarai text-[16px] font-normal leading-[36px] tracking-[1.28px] px-6 py-1 rounded-[8px] hover:bg-[#52cdb9]">
-                Je m'inscris
-              </button>
-            </div>
+            )}
 
           </div>
         </div>
